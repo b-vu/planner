@@ -1,0 +1,21 @@
+.lead{
+    font-size: 32px;
+}
+
+p{
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+.row{
+    height: 100px;
+}
+
+textarea{
+    resize: none;
+}
+
+.btn{
+    border: 1px solid black;
+}
