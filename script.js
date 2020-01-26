@@ -46,22 +46,27 @@ $(document).ready(function(){
 
     function displayTime(){
         var currentHour = moment().hour();
-        if(currentHour >= 0 && currentHour <= 8){ //check if this works
+        var currentHourCounterGray = currentHour;
+        var currentHourCounterGreen = currentHour;
+        console.log(currentHour, currentHourCounterGray, currentHourCounterGreen)
+        if(currentHour >= 0 && currentHour <= 8){
             $(".schedule").attr("style", "background-color:green");
         }
         else if(currentHour >= 9 && currentHour <= 17){ //check if this works
             var currentHourString = "#".concat(currentHour.toString());
-            $(currentHourString).attr("style", "background-color:red")
+            $(currentHourString).attr("style", "background-color:red");
+            console.log(currentHour, currentHourString);
+            console.log($(currentHourString).attr("style"));
 
-            while(currentHour > 9){ //check if this works
-                currentHour--;
-                var pastHourString = "#".concat(currentHour.toString());
+            while(currentHourCounterGray > 9){ //check if this works
+                currentHourCounterGray--;
+                var pastHourString = "#".concat(currentHourCounterGray.toString());
                 $(pastHourString).attr("style", "background-color:gray");
             }
 
-            while(currentHour < 17){ //check if this works
-                currentHour++;
-                var futureHourString = "#".concat(currentHour.toString());
+            while(currentHourCounterGreen < 17){ //check if this works
+                currentHourCounterGreen++;
+                var futureHourString = "#".concat(currentHourCounterGreen.toString());
                 $(futureHourString).attr("style", "background-color:green");
             }
         }
@@ -71,22 +76,27 @@ $(document).ready(function(){
 
         var updateHour = setInterval(function(){
             var currentHour = moment().hour();
-            if(currentHour >= 0 && currentHour <= 8){ //check if this works
+            var currentHourCounterGray = currentHour;
+            var currentHourCounterGreen = currentHour;
+            console.log(currentHour, currentHourCounterGray, currentHourCounterGreen)
+            if(currentHour >= 0 && currentHour <= 8){
                 $(".schedule").attr("style", "background-color:green");
             }
             else if(currentHour >= 9 && currentHour <= 17){ //check if this works
                 var currentHourString = "#".concat(currentHour.toString());
-                $(currentHourString).attr("style", "background-color:red")
+                $(currentHourString).attr("style", "background-color:red");
+                console.log(currentHour, currentHourString);
+                console.log($(currentHourString).attr("style"));
 
-                while(currentHour > 9){ //check if this works
-                    currentHour--;
-                    var pastHourString = "#".concat(currentHour.toString());
+                while(currentHourCounterGray > 9){ //check if this works
+                    currentHourCounterGray--;
+                    var pastHourString = "#".concat(currentHourCounterGray.toString());
                     $(pastHourString).attr("style", "background-color:gray");
                 }
-    
-                while(currentHour < 17){ //check if this works
-                    currentHour++;
-                    var futureHourString = "#".concat(currentHour.toString());
+
+                while(currentHourCounterGreen < 17){ //check if this works
+                    currentHourCounterGreen++;
+                    var futureHourString = "#".concat(currentHourCounterGreen.toString());
                     $(futureHourString).attr("style", "background-color:green");
                 }
             }
@@ -96,7 +106,7 @@ $(document).ready(function(){
             console.log("minutes")
         }, 60000) //checks every minute
     };
-    
+
     displayDate();
     displayTime();
     displaySchedule();
