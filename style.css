@@ -18,19 +18,25 @@ textarea{
     border-left: 2px solid black;
 }
 
-.bordertop{
+.bordertop, #bt{
     border-top: 2px solid black;
 }
 
-.borderbottom{
+.borderbottom, #bb{
     border-bottom: 2px solid black;
 }
 
 .btn{
     border: 1px solid black;
+    border-right: 2px solid black;
     background-color: rgb(69, 166, 245);
+    border-radius: 0px;
 }
 
 .btn:hover{
     background-color: rgb(69, 166, 245);
+}
+
+.btn:focus{
+    background-color: rgb(26, 139, 204);
 }
